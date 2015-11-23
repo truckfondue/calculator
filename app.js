@@ -1,6 +1,7 @@
 require('./utils');
 
-(function calculatorFunctions() {
+// instantiate the calculator to the DOM
+(function calculator() {
   createElements();
 })();
 
@@ -13,11 +14,6 @@ function createElements () {
   
   // CALCULATOR BUTTONS
   
-  // create an element
-  // create the elements text
-  // append the text to the DOM element
-  // append element the element to the body
-  // repeat...
   var calcContainer = document.createElement('div');
   calcContainer.className = 'calcContainer';
   document.body.appendChild(calcContainer);
@@ -26,13 +22,15 @@ function createElements () {
   calculator.name = 'calculator';
   calcContainer.appendChild(calculator);
   
-  var view = document.createElement('input');
-  view.type = 'text';
-  view.name = 'answer'
-  calculator.appendChild(view);
+  var answer = document.createElement('input');
+  answer.type = 'text';
+  answer.name = 'answer';
+  answer.className = 'answer';
+  calculator.appendChild(answer);
   
   // FIRST ROW
   var firstRow = document.createElement('div');
+  firstRow.className = 'firstRow';
   calculator.appendChild(firstRow);
   
   // 7
@@ -73,10 +71,11 @@ function createElements () {
     calculator.answer.value += '+';
   };
   firstRow.appendChild(add);
-  add.className = 'add';
+  add.className = 'add operator';
   
   // SECOND ROW
   var secondRow = document.createElement('div');
+  secondRow.className = 'secondRow';
   calculator.appendChild(secondRow);
 
   //  4
@@ -117,11 +116,12 @@ function createElements () {
     calculator.answer.value += '-';
   };
   secondRow.appendChild(subtract);
-  subtract.className = 'subtract';
+  subtract.className = 'subtract operator';
   
   
   // THIRD ROW
   var thirdRow = document.createElement('div');
+  thirdRow.className = 'thirdRow';
   calculator.appendChild(thirdRow);
   
   // 1
@@ -162,11 +162,12 @@ function createElements () {
     calculator.answer.value += '*';
   };
   thirdRow.appendChild(multiply);
-  multiply.className = 'multiply';
+  multiply.className = 'multiply operator';
   
   
   // FOURTH ROW
   var fourthRow = document.createElement('div');
+  fourthRow.className = 'fourthRow'
   calculator.appendChild(fourthRow);
   
   // 0
@@ -177,6 +178,7 @@ function createElements () {
     calculator.answer.value += '0';
   };
   fourthRow.appendChild(zero);
+  zero.className = 'zero number'
   
   // %
   var modulus = document.createElement('input');
@@ -186,7 +188,7 @@ function createElements () {
     calculator.answer.value += '%';
   };
   fourthRow.appendChild(modulus);
-  modulus.className = 'modulus';
+  modulus.className = 'modulus operator';
  
   // .
   var decimal = document.createElement('input');
@@ -196,7 +198,7 @@ function createElements () {
     calculator.answer.value += '.';
   };
   fourthRow.appendChild(decimal);
-  decimal.className = 'decimal';
+  decimal.className = 'decimal operator';
   
   // /
   var divide = document.createElement('input');
@@ -206,10 +208,11 @@ function createElements () {
     calculator.answer.value += '/';
   };
   fourthRow.appendChild(divide);
-  divide.className = 'divide';
+  divide.className = 'divide operator';
   
   
   var fifthRow = document.createElement('div');
+  fifthRow.className = 'fifthRow';
   calculator.appendChild(fifthRow);
   
   // C
@@ -231,13 +234,6 @@ function createElements () {
   };
   fifthRow.appendChild(calculate);
   calculate.className = 'calculate';
-  
-  // +/-
-//  var sign = document.createElement('input');
-//  sign.type = 'button';
-//  sign.value = '+/-';
-//  calculator.appendChild(sign);
-//  sign.className = 'sign';
 }
 
 
