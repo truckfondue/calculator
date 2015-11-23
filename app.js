@@ -18,132 +18,226 @@ function createElements () {
   // append the text to the DOM element
   // append element the element to the body
   // repeat...
+  var calcContainer = document.createElement('div');
+  calcContainer.className = 'calcContainer';
+  document.body.appendChild(calcContainer);
+  
+  var calculator = document.createElement('form');
+  calculator.name = 'calculator';
+  calcContainer.appendChild(calculator);
+  
+  var view = document.createElement('input');
+  view.type = 'text';
+  view.name = 'answer'
+  calculator.appendChild(view);
+  
+  // FIRST ROW
+  var firstRow = document.createElement('div');
+  calculator.appendChild(firstRow);
+  
+  // 7
+  var seven = document.createElement('input');
+  seven.type = 'button';
+  seven.value = 7;
+  seven.onclick = function() {
+    calculator.answer.value += '7';
+  };
+  firstRow.appendChild(seven);
+  seven.className = 'seven number';
+  
+  // 8
+  var eight = document.createElement('input');
+  eight.type = 'button';
+  eight.value = 8;
+  eight.onclick = function() {
+    calculator.answer.value += '8';
+  };
+  firstRow.appendChild(eight);
+  eight.className = 'eight number';
+  
+  // 9
+  var nine = document.createElement('input');
+  nine.type = 'button';
+  nine.value = 9;
+  nine.onclick = function() {
+    calculator.answer.value += '9';
+  };
+  firstRow.appendChild(nine);
+  nine.className = 'nine number';
+  
+  // +
+  var add = document.createElement('input');
+  add.type = 'button';
+  add.value = '+';
+  add.onclick = function() {
+    calculator.answer.value += '+';
+  };
+  firstRow.appendChild(add);
+  add.className = 'add';
+  
+  // SECOND ROW
+  var secondRow = document.createElement('div');
+  calculator.appendChild(secondRow);
+
+  //  4
+  var four    = document.createElement('input');
+  four.type = 'button';
+  four.value = 4;
+  four.onclick = function() {
+    calculator.answer.value += '4';
+  };
+  secondRow.appendChild(four);
+  four.className = 'four number';
+  
+  // 5
+  var five    = document.createElement('input');
+  five.type = 'button';
+  five.value = 5;
+  five.onclick = function() {
+    calculator.answer.value += '5';
+  };
+  secondRow.appendChild(five);
+  five.className = 'five number';
+  
+  // 6
+  var six = document.createElement('input');
+  six.type = 'button';
+  six.value = 6;
+  six.onclick = function() {
+    calculator.answer.value += '6';
+  };
+  secondRow.appendChild(six);
+  six.className = 'six number';
+  
+  // -
+  var subtract = document.createElement('input');
+  subtract.type = 'button';
+  subtract.value = '-';
+  subtract.onclick = function() {
+    calculator.answer.value += '-';
+  };
+  secondRow.appendChild(subtract);
+  subtract.className = 'subtract';
+  
+  
+  // THIRD ROW
+  var thirdRow = document.createElement('div');
+  calculator.appendChild(thirdRow);
   
   // 1
-  var one            = document.createElement('div');
-  var oneContent     = document.createTextNode('1');
-  one.appendChild(oneContent);
-  document.body.appendChild(one);
+  var one = document.createElement('input');
+  one.type = 'button';
+  one.value = 1;
+  one.onclick = function() {
+    calculator.answer.value += '1';
+  };
+  thirdRow.appendChild(one);
   one.className = 'one number';
   
   // 2
-  var two     = document.createElement('div');
-  var twoContent     = document.createTextNode('2');
-  two.appendChild(twoContent);
-  document.body.appendChild(two);
+  var two     = document.createElement('input');
+  two.type = 'button';
+  two.value = 2;
+  two.onclick = function() {
+    calculator.answer.value += '2';
+  };
+  thirdRow.appendChild(two);
   two.className = 'two number';
   
   // 3
-  var three   = document.createElement('div');
-  var threeContent   = document.createTextNode('3');
-  three.appendChild(threeContent);
-  document.body.appendChild(three);
-  three.className('three number');
-  
-  //  4
-  var four    = document.createElement('div');
-  var fourContent    = document.createTextNode('4');
-  four.appendChild(fourContent);
-  document.body.appendChild(four);
-  four.className('four number');
-  
-  // 5
-  var five    = document.createElement('div');
-  var fiveContent    = document.createTextNode('5');
-  five.appendChild(fiveContent);
-  document.body.appendChild(five);
-  five.className('five number');
-  
-  // 6
-  var six     = document.createElement('div');
-  var sixContent     = document.createTextNode('6');
-  six.appendChild(sixContent);
-  document.body.appendChild(six);
-  six.className('six number');
-  
-  // 7
-  var seven   = document.createElement('div');
-  var sevenContent   = document.createTextNode('7');
-  seven.appendChild(sevenContent);
-  document.body.appendChild(seven);
-  seven.className('seven number');
-  
-  // 8
-  var eight   = document.createElement('div');
-  var eightContent   = document.createTextNode('8');
-  eight.appendChild(eightContent);
-  document.body.appendChild(eight);
-  eight.className('eight number');
-  
-  // 9
-  var nine    = document.createElement('div');
-  var nineContent    = document.createTextNode('9');
-  nine.appendChild(nineContent);
-  document.body.appendChild(nine);
-  nine.className('nine number');
-  
-  // .
-  var decimal = document.createElement('div');
-  var decimalContent = document.createTextNode('.');
-  decimal.appendChild(decimalContent);
-  document.body.appendChild(decimal);
-  decimal.className('decimal');
-
-  // C
-  var clear     = document.createElement('div');
-  var clearContent     = document.createTextNode('C');
-  clear.appendChild(clearContent);
-  document.body.appendChild(clear);
-  clear.className('clear');
-  
-  // +/-
-  var sign      = document.createElement('div');
-  var signContent      = document.createTextNode('+/-');
-  sign.appendChild(signContent);
-  document.body.appendChild(sign);
-  sign.className('sign');
-  
-  // %
-  var modulus   = document.createElement('div');
-  var modulusContent   = document.createTextNode('%');
-  modulus.appendChild(modulusContent);
-  document.body.appendChild(modulus);
-  modulus.className('modulus');
-  
-  // /
-  var divide    = document.createElement('div');
-  var divideContent    = document.createTextNode('/');
-  divide.appendChild(divideContent);
-  document.body.appendChild(divide);
-  divide.className('divide');
+  var three   = document.createElement('input');
+  three.type = 'button';
+  three.value = 3;
+  three.onclick = function() {
+    calculator.answer.value += '3';
+  };
+  thirdRow.appendChild(three);
+  three.className = 'three number';
   
   // *
-  var multiply  = document.createElement('div');
-  var multiplyContent  = document.createTextNode('*');
-  multiply.appendChild(multiplyContent);
-  document.body.appendChild(multiply);
-  multiply.className('multiply');
+  var multiply = document.createElement('input');
+  multiply.type = 'button';
+  multiply.value = '*';
+  multiply.onclick = function() {
+    calculator.answer.value += '*';
+  };
+  thirdRow.appendChild(multiply);
+  multiply.className = 'multiply';
   
-  // -
-  var subtract  = document.createElement('div');
-  var subtractContent  = document.createTextNode('-');
-  subtract.appendChild(subtractContent);
-  document.body.appendChild(subtract);
-  subtract.className('subtract');
   
-  // +
-  var add       = document.createElement('div');
-  var addContent       = document.createTextNode('+');
-  add.appendChild(addContent);
-  document.body.appendChild(add);
-  add.className('add');
+  // FOURTH ROW
+  var fourthRow = document.createElement('div');
+  calculator.appendChild(fourthRow);
+  
+  // 0
+  var zero = document.createElement('input');
+  zero.type = 'button';
+  zero.value = 0;
+  zero.onclick = function() {
+    calculator.answer.value += '0';
+  };
+  fourthRow.appendChild(zero);
+  
+  // %
+  var modulus = document.createElement('input');
+  modulus.type = 'button';
+  modulus.value = '%';
+  modulus.onclick = function() {
+    calculator.answer.value += '%';
+  };
+  fourthRow.appendChild(modulus);
+  modulus.className = 'modulus';
+ 
+  // .
+  var decimal = document.createElement('input');
+  decimal.type = 'button';
+  decimal.value = '.';
+  decimal.onclick = function() {
+    calculator.answer.value += '.';
+  };
+  fourthRow.appendChild(decimal);
+  decimal.className = 'decimal';
+  
+  // /
+  var divide = document.createElement('input');
+  divide.type = 'button';
+  divide.value = '/';
+  divide.onclick = function() {
+    calculator.answer.value += '/';
+  };
+  fourthRow.appendChild(divide);
+  divide.className = 'divide';
+  
+  
+  var fifthRow = document.createElement('div');
+  calculator.appendChild(fifthRow);
+  
+  // C
+  var clear = document.createElement('input');
+  clear.type = 'button';
+  clear.value = 'C';
+  clear.onclick = function() {
+    calculator.answer.value = '';
+  };
+  fifthRow.appendChild(clear);
+  clear.className = 'clear';
   
   // =
-  var calculate = document.createElement('div');
-  var calculateContent = document.createTextNode('=');
-  calculate.appendChild(calculateContent);
-  document.body.appendChild(calculate);
-  calculate.className('calculate');
+  var calculate = document.createElement('input');
+  calculate.type = 'button';
+  calculate.value = '=';
+  calculate.onclick = function() {
+    calculator.answer.value = eval(calculator.answer.value);
+  };
+  fifthRow.appendChild(calculate);
+  calculate.className = 'calculate';
+  
+  // +/-
+//  var sign = document.createElement('input');
+//  sign.type = 'button';
+//  sign.value = '+/-';
+//  calculator.appendChild(sign);
+//  sign.className = 'sign';
 }
 
 
