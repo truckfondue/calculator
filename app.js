@@ -238,3 +238,4 @@ function createElements () {
 
 
 console.log('calculator app loaded');
+console.log('I am new');
