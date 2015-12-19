@@ -6,11 +6,8 @@ module.exports = {
   
   module: {
     preLoaders: [
-      {
-        test: /\.js$/,
-        exclude: 'node_modules',
-        loader: 'jshint-loader'
-      }
+      { test: /\.js$/, exclude: 'node_modules', loader: 'jshint-loader' },
+      { test: /\.css$/, loader: "style-loader!css-loader" },
     ]
   },
   

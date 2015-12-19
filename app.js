@@ -181,14 +181,14 @@ function createElements () {
   zero.className = 'zero number'
   
   // %
-  var modulus = document.createElement('input');
-  modulus.type = 'button';
-  modulus.value = '%';
-  modulus.onclick = function() {
-    calculator.answer.value += '%';
-  };
-  fourthRow.appendChild(modulus);
-  modulus.className = 'modulus operator';
+  // var modulus = document.createElement('input');
+  // modulus.type = 'button';
+  // modulus.value = '%';
+  // modulus.onclick = function() {
+  //   calculator.answer.value += '%';
+  // };
+  // fourthRow.appendChild(modulus);
+  // modulus.className = 'modulus operator';
  
   // .
   var decimal = document.createElement('input');

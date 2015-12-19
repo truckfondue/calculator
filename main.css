@@ -1,0 +1,39 @@
+.number, .operator, .decimal, .divide {
+    background-color: rgb(214, 214, 214);
+    border: none;
+    height: 50px;
+    width: 50px;
+}
+
+.operator {
+    background-color: rgb(245, 146, 62);
+}
+
+.clear, .calculate, .zero {
+    border: none;
+    height: 50px;
+    width: 100px;
+}
+
+.zero {
+    text-align: left;
+    padding: 0 0 0 22px;
+}
+
+.answer {
+    background-color: rgb(136, 136, 136);
+    border: none;
+    height: 50px;
+    width: 198px;
+}
+
+.calcContainer {
+    margin: 50px;
+    text-align: center;
+}
+
+.firstRow, .secondRow, .thirdRow, .fourthRow {
+    height: 40px;
+/*     width: 200px; */
+width: 100%;
+}
