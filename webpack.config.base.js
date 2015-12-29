@@ -1,19 +1,20 @@
+
 module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      exclude: /(bower_components|node_modules)/,
-      loaders: ['babel'],
+      exclude: /(node_modules)/,
+      loaders: ['babel']
     }],
   },
   output: {
-    libraryTarget: 'umd',
-    library: 'demo'
+    filename: 'dist/bundle.js'
   },
+
   resolve: {
     extensions: [
       '',
-      '.js',
+      '.js'
     ],
   },
 };
