@@ -1,4 +1,4 @@
-import Calculator from '../src/Calculator';
+import Calculator from '../src/es6/Calculator';
 
 describe('Calculator', () => {
   it('should add two numbers', () => {

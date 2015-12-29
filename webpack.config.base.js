@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     libraryTarget: 'umd',
-    library: 'calculator'
+    library: 'demo'
   },
   resolve: {
     extensions: [
