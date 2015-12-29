@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "npm run clean && npm run build:dev",
-    "build:dev": "webpack src/index.js dist/bundle.js --config webpack.config.dev.js",
-    "build:prd": "webpack src/index.js dist/bundle.js --config webpack.config.prd.js",
+    "build:dev": "webpack --config webpack.config.dev.js",
+    "build:prd": "webpack --config webpack.config.prd.js",
     "clean": "rimraf dist build",
     "lint": "eslint .",
     "test": "karma start --single-run --no-auto-watch karma.config.js"

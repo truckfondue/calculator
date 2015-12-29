@@ -1,5 +1,7 @@
 
 module.exports = {
+  entry: './src/index.js',
+
   module: {
     loaders: [{
       test: /\.js$/,
@@ -8,7 +10,9 @@ module.exports = {
     }],
   },
   output: {
-    filename: 'dist/bundle.js'
+    // path: __dirname,
+    // public: 'index.html',
+    filename: './dist/bundle.js'
   },
 
   resolve: {

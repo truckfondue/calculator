@@ -1,3 +1,11 @@
+input {
+    font-size: 20px;
+}
+
+*:focus {
+    outline: 0;
+}
+
 .number, .operator, .decimal, .divide {
     background-color: rgb(214, 214, 214);
     border: none;
@@ -16,15 +24,19 @@
 }
 
 .zero {
-    text-align: left;
-    padding: 0 0 0 22px;
+    height: 50px;
+    text-align: right;
+    padding-right: 18px;
 }
 
 .answer {
     background-color: rgb(136, 136, 136);
     border: none;
     height: 50px;
-    width: 198px;
+    width: 184px;
+    padding: 0 15px 0 0;
+    text-align: right;
+    border-radius: 5px 5px 0 0;
 }
 
 .calcContainer {
@@ -34,6 +46,17 @@
 
 .firstRow, .secondRow, .thirdRow, .fourthRow {
     height: 40px;
-/*     width: 200px; */
-width: 100%;
+    width: 100%;
+}
+
+.number, .answer, .operator, .clear, .calculate {
+    border: 1px solid black;
+} 
+
+.clear {
+    border-radius: 0 0 0 5px;
+}
+
+.calculate {
+    border-radius: 0 0 5px 0;
 }
