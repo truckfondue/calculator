@@ -165,7 +165,7 @@ function createElements () {
   
   // FOURTH ROW
   var fourthRow = document.createElement('div');
-  fourthRow.className = 'fourthRow'
+  fourthRow.className = 'fourthRow';
   calculator.appendChild(fourthRow);
   
   // 0
@@ -176,7 +176,7 @@ function createElements () {
     calculator.answer.value += '0';
   };
   fourthRow.appendChild(zero);
-  zero.className = 'zero number'
+  zero.className = 'zero number';
   
   // %
   // var modulus = document.createElement('input');
