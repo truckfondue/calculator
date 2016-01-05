@@ -1,15 +1,11 @@
-import Calculator from '../src/es6/Calculator';
+require('../src/es6/Calculator');
 
 describe('Calculator', () => {
-  it('should add two numbers', () => {
-    const calculator = new Calculator();
-    const sum = calculator.add(5, 2);
-    expect(sum).toBe(7);
-  });
-
-  it('should substract two numbers', () => {
-    const calculator = new Calculator();
-    const sub = calculator.sub(5, 2);
-    expect(sub).toBe(3);
-  });
+  it('should be available as an export', () => {
+    console.log(calculator)
+    expect(typeof calculator).toBe('object');
+  })
+  // it('should be zero upon load', () => {
+  //   expect(calculator.answer.value).toBe('undefined');
+  // });
 });
