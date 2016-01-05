@@ -8,7 +8,7 @@ require('./utils');
 function createElements () {
   // calculator container
   var title = document.createElement('h1');
-  var titleText = document.createTextNode('JavaScript Calculator');
+  var titleText = document.createTextNode('calcJS');
   title.appendChild(titleText);
   document.body.appendChild(title);
   

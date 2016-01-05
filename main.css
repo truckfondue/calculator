@@ -6,6 +6,12 @@ input {
     outline: 0;
 }
 
+h1 {
+    text-align: center;
+    font-family: Helvetica;
+    font-weight: 400;
+}
+
 .number, .operator, .decimal, .divide {
     background-color: rgb(214, 214, 214);
     border: none;
@@ -45,7 +51,7 @@ input {
 }
 
 .firstRow, .secondRow, .thirdRow, .fourthRow {
-    height: 40px;
+    height: 50px;
     width: 100%;
 }
 
