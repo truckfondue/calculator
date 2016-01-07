@@ -8,12 +8,8 @@
     "url": "https://github.com/zyml/es6-karma-jasmine-webpack-boilerplate"
   },
   "scripts": {
-    "build": "npm run clean && npm run build:dev",
-    "build:dev": "webpack --config webpack.config.dev.js",
-    "build:prd": "webpack --config webpack.config.prd.js",
-    "clean": "rimraf dist build",
-    "lint": "eslint .",
-    "test": "karma start --single-run --no-auto-watch karma.config.js"
+    "build": "webpack",
+    "server": "webpack-dev-server"
   },
   "keywords": [
     "es6",

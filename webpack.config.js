@@ -1,20 +1,24 @@
 module.exports = {
-  entry: ["./utils.js", "./app.js"],
+  entry: ["./src/index.js"],
   output: {
+    path: __dirname,
     filename : 'bundle.js'
   },
-  
+
   module: {
     preLoaders: [
-      { test: /\.js$/, exclude: 'node_modules', loader: 'jshint-loader' },
+      // { test: /\.js$/, exclude: 'node_modules', loader: 'jshint-loader' },
       { test: /\.css$/, loader: "style-loader!css-loader" },
-    ]
+    ],
+    loaders: [{
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      loaders: ['babel']
+    }]
   },
-  
+
   resolve: {
     extensions: ['', '.js']
   }
-  
-};
 
-//webpack-dev-server --inline
+};

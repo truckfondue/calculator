@@ -1,68 +1,49 @@
 // instantiate the calculator to the DOM
+import createDigitButton from './buttons'
+
 export default (function calculator() {
   createElements();
 })();
 
 function createElements () {
   // calculator container
-  var title = document.createElement('h1');
-  var titleText = document.createTextNode('JavaScript Calculator');
+  let title = document.createElement('h1');
+  let titleText = document.createTextNode('calcJS');
   title.appendChild(titleText);
   document.body.appendChild(title);
-  
+
   // CALCULATOR BUTTONS
-  
-  var calcContainer = document.createElement('div');
+
+  let calcContainer = document.createElement('div');
   calcContainer.className = 'calcContainer';
   document.body.appendChild(calcContainer);
-  
-  var calculator = document.createElement('form');
+
+  let calculator = document.createElement('form');
   calculator.name = 'calculator';
   calcContainer.appendChild(calculator);
-  
-  var answer = document.createElement('input');
+
+  let answer = document.createElement('input');
   answer.type = 'text';
   answer.name = 'answer';
   answer.className = 'answer';
   calculator.appendChild(answer);
-  
+
   // FIRST ROW
-  var firstRow = document.createElement('div');
+  let firstRow = document.createElement('div');
   firstRow.className = 'firstRow';
   calculator.appendChild(firstRow);
-  
+
   // 7
-  var seven = document.createElement('input');
-  seven.type = 'button';
-  seven.value = 7;
-  seven.onclick = function() {
-    calculator.answer.value += '7';
-  };
-  firstRow.appendChild(seven);
-  seven.className = 'seven number';
-  
+  firstRow.appendChild(createDigitButton(calculator, 7));
+
   // 8
-  var eight = document.createElement('input');
-  eight.type = 'button';
-  eight.value = 8;
-  eight.onclick = function() {
-    calculator.answer.value += '8';
-  };
-  firstRow.appendChild(eight);
-  eight.className = 'eight number';
-  
+  firstRow.appendChild(createDigitButton(calculator, 8));
+
   // 9
-  var nine = document.createElement('input');
-  nine.type = 'button';
-  nine.value = 9;
-  nine.onclick = function() {
-    calculator.answer.value += '9';
-  };
-  firstRow.appendChild(nine);
-  nine.className = 'nine number';
-  
+  firstRow.appendChild(createDigitButton(calculator, 9));
+
   // +
-  var add = document.createElement('input');
+  let add = document.createElement('input');
   add.type = 'button';
   add.value = '+';
   add.onclick = function() {
@@ -70,44 +51,23 @@ function createElements () {
   };
   firstRow.appendChild(add);
   add.className = 'add operator';
-  
+
   // SECOND ROW
-  var secondRow = document.createElement('div');
+  let secondRow = document.createElement('div');
   secondRow.className = 'secondRow';
   calculator.appendChild(secondRow);
 
   //  4
-  var four    = document.createElement('input');
-  four.type = 'button';
-  four.value = 4;
-  four.onclick = function() {
-    calculator.answer.value += '4';
-  };
-  secondRow.appendChild(four);
-  four.className = 'four number';
-  
+  secondRow.appendChild(createDigitButton(calculator, 4));
+
   // 5
-  var five    = document.createElement('input');
-  five.type = 'button';
-  five.value = 5;
-  five.onclick = function() {
-    calculator.answer.value += '5';
-  };
-  secondRow.appendChild(five);
-  five.className = 'five number';
-  
+  secondRow.appendChild(createDigitButton(calculator, 5));
+
   // 6
-  var six = document.createElement('input');
-  six.type = 'button';
-  six.value = 6;
-  six.onclick = function() {
-    calculator.answer.value += '6';
-  };
-  secondRow.appendChild(six);
-  six.className = 'six number';
-  
+  secondRow.appendChild(createDigitButton(calculator, 6));
+
   // -
-  var subtract = document.createElement('input');
+  let subtract = document.createElement('input');
   subtract.type = 'button';
   subtract.value = '-';
   subtract.onclick = function() {
@@ -115,45 +75,24 @@ function createElements () {
   };
   secondRow.appendChild(subtract);
   subtract.className = 'subtract operator';
-  
-  
+
+
   // THIRD ROW
-  var thirdRow = document.createElement('div');
+  let thirdRow = document.createElement('div');
   thirdRow.className = 'thirdRow';
   calculator.appendChild(thirdRow);
-  
+
   // 1
-  var one = document.createElement('input');
-  one.type = 'button';
-  one.value = 1;
-  one.onclick = function() {
-    calculator.answer.value += '1';
-  };
-  thirdRow.appendChild(one);
-  one.className = 'one number';
-  
+  thirdRow.appendChild(createDigitButton(calculator, 1));
+
   // 2
-  var two     = document.createElement('input');
-  two.type = 'button';
-  two.value = 2;
-  two.onclick = function() {
-    calculator.answer.value += '2';
-  };
-  thirdRow.appendChild(two);
-  two.className = 'two number';
-  
+  thirdRow.appendChild(createDigitButton(calculator, 2));
+
   // 3
-  var three   = document.createElement('input');
-  three.type = 'button';
-  three.value = 3;
-  three.onclick = function() {
-    calculator.answer.value += '3';
-  };
-  thirdRow.appendChild(three);
-  three.className = 'three number';
-  
+  thirdRow.appendChild(createDigitButton(calculator, 3));
+
   // *
-  var multiply = document.createElement('input');
+  let multiply = document.createElement('input');
   multiply.type = 'button';
   multiply.value = '*';
   multiply.onclick = function() {
@@ -161,35 +100,18 @@ function createElements () {
   };
   thirdRow.appendChild(multiply);
   multiply.className = 'multiply operator';
-  
-  
+
+
   // FOURTH ROW
-  var fourthRow = document.createElement('div');
-  fourthRow.className = 'fourthRow';
+  let fourthRow = document.createElement('div');
+  fourthRow.className = 'fourthRow'
   calculator.appendChild(fourthRow);
-  
+
   // 0
-  var zero = document.createElement('input');
-  zero.type = 'button';
-  zero.value = 0;
-  zero.onclick = function() {
-    calculator.answer.value += '0';
-  };
-  fourthRow.appendChild(zero);
-  zero.className = 'zero number';
-  
-  // %
-  // var modulus = document.createElement('input');
-  // modulus.type = 'button';
-  // modulus.value = '%';
-  // modulus.onclick = function() {
-  //   calculator.answer.value += '%';
-  // };
-  // fourthRow.appendChild(modulus);
-  // modulus.className = 'modulus operator';
- 
+  fourthRow.appendChild(createDigitButton(calculator, 0));
+
   // .
-  var decimal = document.createElement('input');
+  let decimal = document.createElement('input');
   decimal.type = 'button';
   decimal.value = '.';
   decimal.onclick = function() {
@@ -197,9 +119,9 @@ function createElements () {
   };
   fourthRow.appendChild(decimal);
   decimal.className = 'decimal operator';
-  
+
   // /
-  var divide = document.createElement('input');
+  let divide = document.createElement('input');
   divide.type = 'button';
   divide.value = '/';
   divide.onclick = function() {
@@ -207,14 +129,14 @@ function createElements () {
   };
   fourthRow.appendChild(divide);
   divide.className = 'divide operator';
-  
-  
-  var fifthRow = document.createElement('div');
+
+
+  let fifthRow = document.createElement('div');
   fifthRow.className = 'fifthRow';
   calculator.appendChild(fifthRow);
-  
+
   // C
-  var clear = document.createElement('input');
+  let clear = document.createElement('input');
   clear.type = 'button';
   clear.value = 'C';
   clear.onclick = function() {
@@ -222,9 +144,9 @@ function createElements () {
   };
   fifthRow.appendChild(clear);
   clear.className = 'clear';
-  
+
   // =
-  var calculate = document.createElement('input');
+  let calculate = document.createElement('input');
   calculate.type = 'button';
   calculate.value = '=';
   calculate.onclick = function() {
@@ -234,5 +156,5 @@ function createElements () {
   calculate.className = 'calculate';
 }
 
-
 console.log('calculator app loaded');
+

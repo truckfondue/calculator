@@ -57,7 +57,7 @@ h1 {
 
 .number, .answer, .operator, .clear, .calculate {
     border: 1px solid black;
-} 
+}
 
 .clear {
     border-radius: 0 0 0 5px;
@@ -65,4 +65,8 @@ h1 {
 
 .calculate {
     border-radius: 0 0 5px 0;
+}
+
+.fourthRow input:nth-child(1){
+  width: 100px;
 }
