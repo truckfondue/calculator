@@ -1,1 +1,1 @@
-import Calculator from './es6/Calculator'
+import calculator from './es6/calculator.js'
