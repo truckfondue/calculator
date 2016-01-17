@@ -1,4 +1,4 @@
-require('../src/es6/Calculator');
+require('../src/calc');
 
 describe('Calculator', () => {
   it('should be available as an export', () => {

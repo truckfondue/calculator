@@ -1,1 +1,0 @@
-import Calculator from './es6/Calculator'
