@@ -31,8 +31,8 @@ h1 {
 
 .zero {
     height: 50px;
-    text-align: left;
-    padding-left: 18px;
+    text-align: right;
+    padding-right: 18px;
 }
 
 .answer {
@@ -57,7 +57,7 @@ h1 {
 
 .number, .answer, .operator, .clear, .calculate {
     border: 1px solid black;
-} 
+}
 
 .clear {
     border-radius: 0 0 0 5px;
@@ -65,4 +65,8 @@ h1 {
 
 .calculate {
     border-radius: 0 0 5px 0;
+}
+
+.fourthRow .number {
+    width: 100px;
 }
